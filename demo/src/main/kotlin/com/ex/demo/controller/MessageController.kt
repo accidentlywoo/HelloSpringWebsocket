@@ -11,7 +11,7 @@ import java.util.*
 @Controller
 class MessageController {
 
-    @MessageMapping("/chat")
+    @MessageMapping("/chat") // /app/chat client send SUBSCRIBE Frame
     @SendTo("/topic/messages")
     fun send(message: Message): OutputMessage {
         val time = SimpleDateFormat("HH:mm").format(Date())
